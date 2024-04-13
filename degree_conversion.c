@@ -3,7 +3,8 @@
 /* print Farenheit-Celsius table
     for fahr = 0, 20, ..., 300 */
 main() {
-    int fahr, celsius;
+    char deg=248;
+    float fahr, celsius;
     int lower, upper, step;
 
     lower = 0;   /* lower limit of temperature table */
@@ -11,9 +12,10 @@ main() {
     step = 20; /* step size*/
 
     fahr = lower;
+    printf("  F\t   C\n");
     while (fahr <= upper) {
-        celsius = 5 * (fahr-32) / 9;
-        printf("%d\t%d\n", fahr, celsius);
+        celsius = (5.0/9.0) * (fahr-32.0);
+        printf("%3.0f%c\t%6.2f%c\n", fahr, deg, celsius, deg);
         fahr = fahr + step;
     }
 }
